@@ -36,15 +36,16 @@ st.set_page_config(
 )
 
 st.title("MediCore Chatbot 💡")
-st.subheader("Welcome to MediCore! I’m Medi, your digital mental health companion — here to support you with empathetic conversations.")
+st.write("Welcome to MediCore! I’m Medi, your digital mental health companion — here to support you with empathetic conversations.")
 
-st.sidebar.title('Symptom Checker 🩺')
+st.sidebar.title('Daily Motivation 💬')
+motivation_quote = st.sidebar.markdown(''You are stronger than you think. Take it one step at a time.'')
+
+st.sidebar.subheader('Symptom Checker 🩺')
 selected_symptom = st.sidebar.radio(
     "# How do you feel today?",
     ('😔 Feeling Anxious', '😞 Feeling Depressed', '😓 Feeling Stressed', '🛌 Trouble Sleeping', '🤕 Physical Symptoms')
 )
-st.sidebar.title('Daily Motivation 💬')
-motivation_quote = st.sidebar.markdown('You are stronger than you think. Take it one step at a time.')
 
 # Main content
 
