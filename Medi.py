@@ -1,10 +1,15 @@
 import streamlit as st
+import openai
+import pandas as pd
 from langchain.chains import LLMChain
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 
 # Initialize the OpenAI model with your API key
 llm = OpenAI(api_key='sk-None-CqwuxMIliksoBMbP99LHT3BlbkFJeSXBu9ElyhWvC9hg6TN0')
+openai.api_key = ''''
+
+
 
 # Define a prompt template for querying
 prompt_template = PromptTemplate(
