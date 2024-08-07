@@ -39,7 +39,7 @@ st.markdown(
     """
     <style>
     .main {
-        background-color: #f5f5f5;
+        background-color: #003566;
         padding: 20px;
         border-radius: 10px;
     }
