@@ -38,17 +38,6 @@ st.set_page_config(
 st.title("MediCore Chatbot 💡")
 st.write("Welcome to MediCore! I’m Medi, your digital mental health companion — here to support you with empathetic conversations.")
 
-st.markdown(
-    """
-    <hr>
-    <footer>
-    <p>Created by the Innovative Sparks. This chatbot does not replace human interaction. Seek help from nearby facilities.</p>
-    </footer>
-    """,
-    unsafe_allow_html=True
-)
-
-
 st.sidebar.header('Daily Motivation 💬')
 motivation_quote = st.sidebar.markdown('You are stronger than you think. Take it one step at a time.')
 
@@ -68,3 +57,14 @@ if st.button("⟫"):
         st.write(answer)
     else:
         st.write("Please enter a question.")
+
+
+st.markdown(
+    """
+    <hr>
+    <footer>
+    <p>Created by the Innovative Sparks. This chatbot does not replace human interaction. Seek help from nearby facilities.</p>
+    </footer>
+    """,
+    unsafe_allow_html=True
+)
