@@ -27,8 +27,12 @@ def get_response(data_description, question):
     return response
 
 # Streamlit app
-st.title("Welcome to MediCore 🤖🌟!")
-st.write("Hey love, welcome to MediCore! I’m Medi, your digital mental health companion — here to support you with empathetic conversations.")
+st.set_page_config(
+    page_title="MediCore Chatbot",
+    page_icon="🤖",
+    layout="centered",  # or "wide"
+    initial_sidebar_state="expanded",  # or "collapsed"
+)
 
 st.sidebar.title('Symptom Checker 🩺')
 selected_symptom = st.sidebar.radio(
