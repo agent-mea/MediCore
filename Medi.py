@@ -30,17 +30,13 @@ def get_response(data_description, question):
 st.title("Welcome to MediCore 🤖🌟!")
 st.write("Hey love, welcome to MediCore! I’m Medi, your digital mental health companion — here to support you with empathetic conversations.")
 
-data_description = "Hello there! I'm Medi, here to support you. How are you feeling today?"
-st.write("### Start Your Conversation")
-st.write(data_description)
-
 st.sidebar.title('Symptom Checker 🩺')
 selected_symptom = st.sidebar.radio(
-    "Choose an option:",
+    "How do you feel today?",
     ('😔 Feeling Anxious', '😞 Feeling Depressed', '😓 Feeling Stressed', '🛌 Trouble Sleeping', '🤕 Physical Symptoms')
 )
 st.sidebar.title('Daily Motivation 💬')
-motivation_quote = st.sidebar.text("You are stronger than you think.","Take it one step at a time.")
+motivation_quote = st.sidebar.text('You are stronger than you think. Take it one step at a time.')
 
 # Main content
 
