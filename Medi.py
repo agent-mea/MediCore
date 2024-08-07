@@ -41,7 +41,7 @@ selected_symptom = st.sidebar.radio(
     ('😔 Feeling Anxious', '😞 Feeling Depressed', '😓 Feeling Stressed', '🛌 Trouble Sleeping', '🤕 Physical Symptoms')
 )
 st.sidebar.title('Daily Motivation 💬')
-motivation_quote = st.sidebar.body('You are stronger than you think. Take it one step at a time.')
+motivation_quote = st.sidebar.markdown('You are stronger than you think. Take it one step at a time.')
 
 # Main content
 
