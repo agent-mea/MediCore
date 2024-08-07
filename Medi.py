@@ -28,7 +28,7 @@ def get_response(data_description, question):
 
 # Streamlit app
 st.title("MediCore 🤖")
-st.heading("Hey love! My name is MediCore but you can call me Medi. How can I help you today?")
+st.header("Hey love! My name is MediCore but you can call me Medi. How can I help you today?")
 
 data_description = "Data includes various facts about countries, such as capitals and population sizes and hurricane data"
 st.write("### Data Description")
