@@ -47,12 +47,6 @@ st.markdown(
         background-color: #03045E;
         color: white;
     }
-    /*Custom sidebar style*/
-    .css-1d391kg {
-        background-color: #FFD60A;
-        color: black;
-    }
-    </style>
     .stTextInput>div>div>input {
         color: white;
         padding: 10px;
@@ -62,6 +56,11 @@ st.markdown(
         text-align: center;
         font-size: 20px;
         margin: 20px 0;
+    }
+    /*Custom sidebar style*/
+    .css-1d391kg {
+        background-color: #FFD60A;
+        color: black;
     }
     </style>
     """,
