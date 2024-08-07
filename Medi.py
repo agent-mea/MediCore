@@ -45,9 +45,10 @@ st.markdown(
     }
     .stButton>button {
         background-color: #03045E;
-        color: navy;
+        color: white;
     }
     .stTextInput>div>div>input {
+        color: white;
         padding: 10px;
         border-radius: 5px;
     }
