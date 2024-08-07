@@ -48,6 +48,3 @@ if st.button("⟫"):
         st.write(answer)
     else:
         st.write("Please enter a question.")
-
-if __name__ == "__main__":
-    st.write("Run this script with Streamlit by using the command: `streamlit run Medi.py`")
