@@ -35,8 +35,7 @@ st.write("### Data Description")
 st.write(data_description)
 
 st.sidebar.title('Daily Motivation 💬')
-motivation_quote = st.sidebar.text("You are stronger than you think. 
-Take it one step at a time.")
+motivation_quote = st.sidebar.text("You are stronger than you think." /n "Take it one step at a time.")
 
 st.sidebar.title('Symptom Checker 🩺')
 selected_symptom = st.sidebar.radio(
