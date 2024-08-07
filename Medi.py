@@ -38,7 +38,7 @@ st.set_page_config(
 st.title("MediCore Chatbot 💡")
 st.write("Welcome to MediCore! I’m Medi, your digital mental health companion — here to support you with empathetic conversations.")
 
-st.sidebar.title('Daily Motivation 💬')
+st.sidebar.header('Daily Motivation 💬')
 motivation_quote = st.sidebar.markdown('You are stronger than you think. Take it one step at a time.')
 
 st.sidebar.subheader('Symptom Checker 🩺')
