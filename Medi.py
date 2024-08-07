@@ -47,7 +47,7 @@ st.markdown(
         background-color: #03045E;
         color: white;
     }
-    /* Custom sidebar style */
+    /*Custom sidebar style*/
     .css-1d391kg {
         background-color: #FFD60A;
         color: black;
