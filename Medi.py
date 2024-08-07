@@ -7,8 +7,6 @@ from langchain.prompts import PromptTemplate
 
 # Initialize the OpenAI model with your API key
 llm = OpenAI(api_key='sk-None-CqwuxMIliksoBMbP99LHT3BlbkFJeSXBu9ElyhWvC9hg6TN0')
-openai.api_key = 'api_key='sk-None-CqwuxMIliksoBMbP99LHT3BlbkFJeSXBu9ElyhWvC9hg6TN0'
-
 
 
 # Define a prompt template for querying
