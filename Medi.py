@@ -35,6 +35,9 @@ st.set_page_config(
     initial_sidebar_state="expanded", 
 )
 
+st.title("MediCore Chatbot 🤖")
+st.subheader("Welcome to MediCore! I’m Medi, your digital mental health companion — here to support you with empathetic conversations.")
+
 st.sidebar.title('Symptom Checker 🩺')
 selected_symptom = st.sidebar.radio(
     "# How do you feel today?",
