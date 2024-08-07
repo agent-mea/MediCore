@@ -32,7 +32,7 @@ st.write("Hey love, welcome to MediCore! I’m Medi, your digital mental health 
 
 st.sidebar.title('Symptom Checker 🩺')
 selected_symptom = st.sidebar.radio(
-    "How do you feel today?",
+    "### How do you feel today?",
     ('😔 Feeling Anxious', '😞 Feeling Depressed', '😓 Feeling Stressed', '🛌 Trouble Sleeping', '🤕 Physical Symptoms')
 )
 st.sidebar.title('Daily Motivation 💬')
