@@ -63,7 +63,7 @@ st.markdown(
     """
     <hr>
     <footer>
-    <p><div class="centered-text">Created by the Innovative Sparks. This chatbot does not replace human interaction. Seek help from nearby facilities.</p>
+    <p><div class="centered-text">Created by the Innovative Sparks. This chatbot does not replace human interaction. Seek help from nearby facilities.</div></p>
     </footer>
     """,
     unsafe_allow_html=True
