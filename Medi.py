@@ -30,24 +30,22 @@ def get_response(data_description, question):
 st.title("Welcome to MediCore 🤖🌟!")
 st.write("Hey love, welcome to MediCore! I’m Medi, your digital mental health companion — here to support you with empathetic conversations.")
 
-data_description = "Start your conversation here. Hello there! I'm Medi, here to support you. How are you feeling today?"
-st.write("### Data Description")
+data_description = "Hello there! I'm Medi, here to support you. How are you feeling today?"
+st.write("### Start Your Conversation")
 st.write(data_description)
-
-st.sidebar.title('Daily Motivation 💬')
-motivation_quote = st.sidebar.text("You are stronger than you think.","Take it one step at a time.")
 
 st.sidebar.title('Symptom Checker 🩺')
 selected_symptom = st.sidebar.radio(
     "Choose an option:",
     ('😔 Feeling Anxious', '😞 Feeling Depressed', '😓 Feeling Stressed', '🛌 Trouble Sleeping', '🤕 Physical Symptoms')
 )
-
+st.sidebar.title('Daily Motivation 💬')
+motivation_quote = st.sidebar.text("You are stronger than you think.","Take it one step at a time.")
 
 # Main content
 
-question = st.text_input("Enter a question about the data:")
-if st.button("Get Answer"):
+question = st.text_input("How do you feel?")
+if st.button("⟫"):
     if question:
         answer = get_response(data_description, question)
         st.write("### Answer")
