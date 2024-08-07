@@ -47,10 +47,9 @@ st.markdown(
         background-color: #03045E;
         color: white;
     }
-    .stSidebar{
+    /* Custom sidebar style */
+    .css-1d391kg {
         background-color: #FFD60A;
-        padding: 20px;
-        border-radius: 10px;
         color: black;
     }
     .stTextInput>div>div>input {
