@@ -2,6 +2,7 @@ import streamlit as st
 from langchain.chains import LLMChain
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
+from playsound import playsound
 
 # Initialize the OpenAI model with your API key
 llm = OpenAI(api_key='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')
