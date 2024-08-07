@@ -1,6 +1,4 @@
 import streamlit as st
-import openai
-import pandas as pd
 from langchain.chains import LLMChain
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
