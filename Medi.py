@@ -35,7 +35,32 @@ st.set_page_config(
     initial_sidebar_state="expanded", 
 )
 
-st.title('<div class="centered-text">Daily Motivation 💬</div>', unsafe_allow_html=True)
+st.markdown(
+    """
+    <style>
+    .main {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .stButton>button {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .stTextInput>div>div>input {
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .centered-text {
+        text-align: center;
+        font-size: 20px;
+        margin: 20px 0;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown('<div class="centered-text">Daily Motivation 💬</div>', unsafe_allow_html=True)
 st.markdown('<div class="centered-text">You are stronger than you think. Take it one step at a time.</div>', unsafe_allow_html=True)
 
 st.title("MediCore Chatbot 💡")
