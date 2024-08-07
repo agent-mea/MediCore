@@ -49,15 +49,18 @@ selected_symptom = st.sidebar.radio(
 
 # Main content
 
-question = st.text_input("How do you feel?")
-if st.button("⟫"):
+with st.form(key='question_form'):
+    question = st.text_input("How can I help you?")
+    submit_button = st.form_submit_button(label='Send')
+
+if submit_button:
     if question:
         answer = get_response(data_description, question)
         st.write("### Answer")
         st.write(answer)
+        playsound('notification_sound.mp3')  # Play a sound after getting the answer
     else:
         st.write("Please enter a question.")
-
 
 st.markdown(
     """
