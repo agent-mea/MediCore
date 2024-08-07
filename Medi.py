@@ -35,11 +35,11 @@ st.set_page_config(
     initial_sidebar_state="expanded", 
 )
 
+st.title('<div class="centered-text">Daily Motivation 💬</div>', unsafe_allow_html=True)
+st.markdown('<div class="centered-text">You are stronger than you think. Take it one step at a time.</div>', unsafe_allow_html=True)
+
 st.title("MediCore Chatbot 💡")
 st.write("Welcome to MediCore! I’m Medi, your digital mental health companion — here to support you with empathetic conversations.")
-
-st.sidebar.header('Daily Motivation 💬')
-motivation_quote = st.sidebar.markdown('You are stronger than you think. Take it one step at a time.')
 
 st.sidebar.subheader('Symptom Checker 🩺')
 selected_symptom = st.sidebar.radio(
