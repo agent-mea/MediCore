@@ -1,4 +1,4 @@
-pip install streamlit langchain_community langchain
+import streamlit as st
 from langchain.chains import LLMChain
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
@@ -25,15 +25,21 @@ def get_response(data_description, question):
     response = chain.run(data_description=data_description, question=question)
     return response
 
-# Example usage
-if __name__ == "__main__":
-    data_description = "Data includes various facts about countries, such as capitals and population sizes and hurricane data"
-    while True:
-        question = input("Enter A Question \n")
+# Streamlit app
+st.title("MediCore Chatbot")
+
+data_description = "Data includes various facts about countries, such as capitals and population sizes and hurricane data"
+st.write("### Data Description")
+st.write(data_description)
+
+question = st.text_input("Enter a question about the data:")
+if st.button("Get Answer"):
+    if question:
         answer = get_response(data_description, question)
+        st.write("### Answer")
+        st.write(answer)
+    else:
+        st.write("Please enter a question.")
 
-        print(answer)
-
-        if question == "exit":
-
-            break
+if __name__ == "__main__":
+    st.write("Run this script with Streamlit by using the command: `streamlit run Medi.py`")
