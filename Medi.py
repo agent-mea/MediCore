@@ -31,8 +31,8 @@ def get_response(data_description, question):
 st.set_page_config(
     page_title="MediCore Chatbot",
     page_icon="🤖",
-    layout="centered",  # or "wide"
-    initial_sidebar_state="expanded",  # or "collapsed"
+    layout="centered",
+    initial_sidebar_state="expanded", 
 )
 
 st.sidebar.title('Symptom Checker 🩺')
