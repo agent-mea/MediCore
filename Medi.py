@@ -30,7 +30,7 @@ def get_response(data_description, question):
 # Streamlit app
 st.set_page_config(
     page_title="MediCore Chatbot",
-    page_icon="🤖",
+    page_icon="🌿",
     layout="centered",
     initial_sidebar_state="expanded", 
 )
