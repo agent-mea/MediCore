@@ -73,7 +73,7 @@ st.markdown('<div class="centered-text">You are stronger than you think. Take it
 st.title("MediCore Chatbot 💡")
 st.write("Welcome to MediCore! I’m Medi, your digital mental health companion — here to support you with empathetic conversations.")
 
-st.sidebar.image(r"C:\Users\Students\Downloads\WhatsApp Image 2024-08-07 at 2.21.12 PM.jpeg", use_column_width=True)
+st.sidebar.image(r"C:\Users\Students\Desktop\ECCU_GAP\WhatsApp Image 2024-08-07 at 2.21.12 PM.jpeg", use_column_width=True)
 st.sidebar.subheader('Symptom Checker 🩺')
 selected_symptom = st.sidebar.radio(
     "# How do you feel today?",
