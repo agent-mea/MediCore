@@ -39,13 +39,13 @@ st.markdown(
     """
     <style>
     .main {
-        background-color: #003566;
+        background-color: #CAF0F8;
         padding: 20px;
         border-radius: 10px;
     }
     .stButton>button {
-        background-color: #4CAF50;
-        color: white;
+        background-color: #03045E;
+        color: navy;
     }
     .stTextInput>div>div>input {
         padding: 10px;
