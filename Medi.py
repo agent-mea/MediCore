@@ -30,8 +30,7 @@ def get_response(data_description, question):
 st.title("Welcome to MediCore 🤖🌟!")
 st.write("Hey love, welcome to MediCore! I’m Medi, your digital mental health companion — here to support you with empathetic conversations.")
 
-data_description = "Start your conversation here.
-Hello there! I'm Medi, here to support you. How are you feeling today?"
+data_description = "Start your conversation here. Hello there! I'm Medi, here to support you. How are you feeling today?"
 st.write("### Data Description")
 st.write(data_description)
 
