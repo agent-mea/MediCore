@@ -4,7 +4,7 @@ from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 
 # Initialize the OpenAI model with your API key
-llm = OpenAI(api_key='sk-None-CqwuxMIliksoBMbP99LHT3BlbkFJeSXBu9ElyhWvC9hg6TN0')
+llm = OpenAI(api_key='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')
 
 
 # Define a prompt template for querying
@@ -27,12 +27,17 @@ def get_response(data_description, question):
     return response
 
 # Streamlit app
-st.title("MediCore 🤖")
-st.header("Hey love! My name is MediCore but you can call me Medi. How can I help you today?")
+st.title("Welcome to MediCore 🤖🌟!")
+st.write("Hey love, welcome to MediCore! I’m Medi, your digital mental health companion — here to support you with empathetic conversations.")
 
-data_description = "Data includes various facts about countries, such as capitals and population sizes and hurricane data"
+data_description = "Start your conversation here.
+Hello there! I'm Medi, here to support you. How are you feeling today?"
 st.write("### Data Description")
 st.write(data_description)
+
+st.sidebar.title('Daily Motivation 💬')
+motivation_quote = st.sidebar.text("You are stronger than you think. 
+Take it one step at a time.")
 
 st.sidebar.title('Symptom Checker 🩺')
 selected_symptom = st.sidebar.radio(
@@ -40,12 +45,8 @@ selected_symptom = st.sidebar.radio(
     ('😔 Feeling Anxious', '😞 Feeling Depressed', '😓 Feeling Stressed', '🛌 Trouble Sleeping', '🤕 Physical Symptoms')
 )
 
-st.sidebar.title('Daily Motivation 💬')
-motivation_quote = st.sidebar.text("You are stronger than you think. Take it one step at a time.")
 
 # Main content
-st.title('Welcome to MediCore 🌟')
-st.write("Hello there! I'm Medi, here to support you. How are you feeling today?")
 
 question = st.text_input("Enter a question about the data:")
 if st.button("Get Answer"):
