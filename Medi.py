@@ -6,10 +6,14 @@ from langchain.prompts import PromptTemplate
 from playsound import playsound
 
 # Initialize the OpenAI model with your API key
-llm = OpenAI(api_key='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')
+# Replace 'your-api-key-here' with your actual API key for OpenAI
+llm = OpenAI(api_key='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')
 
+# Load the CSV file containing conversation data
+# Ensure the encoding matches your CSV file's encoding
 text_data = pd.read_csv('Conversation(Sheet1).csv', encoding='ISO-8859-1')
 
+# Define the prompt template for the chatbot
 prompt_template = PromptTemplate(
     input_variables=["symptoms", "question"],
     template="""
@@ -25,38 +29,34 @@ prompt_template = PromptTemplate(
     """
 )
 
-# Create a LangChain
+# Create a LangChain with the OpenAI model and the prompt template
 chain = LLMChain(llm=llm, prompt=prompt_template)
 
-# Example symptoms
-symptoms = "The user is experiencing symptoms of anxiety and depression."
-
-# Get a question from the user (for example purposes)
-question = "What can I do to feel better?"
-
+# Function to get a response from the chatbot based on symptoms and a question
 def get_response(symptoms, question):
-    # Running the chain to get a response based on the data description and a question
+    # Run the chain to get a response based on the symptoms and question
     response = chain.run(symptoms=symptoms, question=question)
     return response
 
-# Streamlit app
+# Streamlit app configuration
 st.set_page_config(
     page_title="MediCore Chatbot",
     page_icon="💡",
     layout="centered",
-    initial_sidebar_state="expanded", 
+    initial_sidebar_state="expanded",
 )
 
+# Custom CSS for styling the Streamlit app
 st.markdown(
     """
     <style>
     .main {
-        background-color: #0077B6;
+        background-color: #0077B6; /* Main background color */
         padding: 20px;
         border-radius: 10px;
     }
     .stButton>button {
-        background-color: #BA324F;
+        background-color: #BA324F; /* Button background color */
         color: white;
     }
     .stTextInput>div>div>input {
@@ -65,46 +65,53 @@ st.markdown(
         border-radius: 5px;
     }
     .centered-text {
-        text-align: center;
+        text-align: center; /* Center align text */
         font-size: 20px;
         margin: 20px 0;
     }
-    /*Custom sidebar style*/
+    /* Custom sidebar style */
     .css-1d391kg {
-        background-color: #FFD60A;
+        background-color: #FFD60A; /* Sidebar background color */
         color: black;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
+
+# Display motivational messages
 st.markdown('<div class="centered-text">Daily Motivation 💬</div>', unsafe_allow_html=True)
 st.markdown('<div class="centered-text">You are stronger than you think. Take it one step at a time.</div>', unsafe_allow_html=True)
 
+# Title and welcome message
 st.title("MediCore Chatbot 💡")
 st.write("Welcome to MediCore! I’m Medi, your digital mental health companion — here to support you with empathetic conversations.")
 
+# Sidebar for selecting symptoms
 st.sidebar.subheader('Symptom Checker 🩺')
 selected_symptom = st.sidebar.radio(
-    "# How do you feel today?",
+    "How do you feel today?",
     ('😔 Feeling Anxious', '😞 Feeling Depressed', '😓 Feeling Stressed', '🛌 Trouble Sleeping', '🤕 Physical Symptoms')
 )
 
-# Main content
-
+# Main content form for asking questions
 with st.form(key='question_form'):
     question = st.text_input("How can I help you?")
     submit_button = st.form_submit_button(label='Send')
 
+# Handle form submission
 if submit_button:
     if question:
-        answer = get_response(symptoms, question)
+        # Get response from the chatbot based on the question and selected symptoms
+        answer = get_response(selected_symptom, question)
         st.write("### Answer")
         st.write(answer)
-        playsound('notification_sound.mp3')  # Play a sound after getting the answer
+        # Play a sound notification after getting the answer
+        playsound('notification_sound.mp3')
     else:
         st.write("Please enter a question.")
 
+# Footer with additional information
 st.markdown(
     """
     <hr>
