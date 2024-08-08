@@ -33,7 +33,7 @@ question = "What can I do to feel better?"
 
 def get_response(data_description, question):
     # Running the chain to get a response based on the data description and a question
-    response = chain.run(data_description=data_description, question=question)
+    response = chain.run(symptoms=data_symptoms, question=question)
     return response
 
 # Streamlit app
