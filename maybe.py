@@ -6,7 +6,7 @@
     <title>Chatbot Interface</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif; /* Default font */
+            font-family: 'Elegant', sans-serif; /* Default font */
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
