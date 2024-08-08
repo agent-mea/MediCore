@@ -8,17 +8,6 @@ from playsound import playsound
 llm = OpenAI(api_key='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')
 
 
-# Define a prompt template for querying
-prompt_template = PromptTemplate(
-    input_variables=["data_description", "question"],
-    template="""
-    You are a data analyst. Here is the data you have:
-    {data_description}
-
-    Based on this data, answer the question: {question}
-    """
-)
-
 # Create a LangChain
 chain = LLMChain(llm=llm, prompt=prompt_template)
 
