@@ -6,7 +6,7 @@ from langchain.prompts import PromptTemplate
 from playsound import playsound
 
 # Initialize the OpenAI model with your API key
-llm = OpenAI(api_key='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')
+llm = OpenAI(api_key='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')
 
 text_data = pd.read_csv('Conversation(Sheet1).csv', encoding='ISO-8859-1')
 
