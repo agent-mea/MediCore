@@ -25,6 +25,12 @@ prompt_template = PromptTemplate(
 # Create a LangChain
 chain = LLMChain(llm=llm, prompt=prompt_template)
 
+# Example data description
+data_description = "The user is experiencing symptoms of anxiety and depression."
+
+# Get a question from the user (for example purposes)
+question = "What can I do to feel better?"
+
 def get_response(data_description, question):
     # Running the chain to get a response based on the data description and a question
     response = chain.run(data_description=data_description, question=question)
@@ -89,7 +95,7 @@ with st.form(key='question_form'):
 
 if submit_button:
     if question:
-        answer = get_response(data_description, question)
+        answer = get_response(symptoms, question)
         st.write("### Answer")
         st.write(answer)
         playsound('notification_sound.mp3')  # Play a sound after getting the answer
