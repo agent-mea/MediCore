@@ -7,6 +7,20 @@ from playsound import playsound
 # Initialize the OpenAI model with your API key
 llm = OpenAI(api_key='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')
 
+prompt_template = PromptTemplate(
+    input_variables=["symptoms", "question"],
+    template="""
+    You are a friendly, supportive, and professional mental health chatbot. Your job is to provide users with professional advice, credible sources, and support for their mental health needs.
+
+    Here's what you should do:
+    1. Based on the user's symptoms: {symptoms}, provide an accurate assessment of their mental health situation.
+    2. Answer the user's question: {question}, using a friendly and understanding tone.
+    3. Suggest practical solutions and personally tailored goals to help the user manage their symptoms.
+    4. Provide credible sources where the user can find more information or get further help.
+
+    Always remember to be supportive and professional in your responses.
+    """
+)
 
 # Create a LangChain
 chain = LLMChain(llm=llm, prompt=prompt_template)
