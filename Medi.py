@@ -25,8 +25,8 @@ prompt_template = PromptTemplate(
 # Create a LangChain
 chain = LLMChain(llm=llm, prompt=prompt_template)
 
-# Example data description
-data_description = "The user is experiencing symptoms of anxiety and depression."
+# Example symptoms
+symptoms = "The user is experiencing symptoms of anxiety and depression."
 
 # Get a question from the user (for example purposes)
 question = "What can I do to feel better?"
