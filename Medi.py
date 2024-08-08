@@ -7,8 +7,8 @@ from playsound import playsound
 # Initialize the OpenAI model with your API key
 llm = OpenAI(api_key='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')
 
-file_path = ''
-text_data = pd.read_csv()
+file_path = '"C:\Users\Students\Downloads\Conversation(Sheet1).csv"'
+text_data = pd.read_csv(Conversation(Sheet1).csv)
 
 prompt_template = PromptTemplate(
     input_variables=["symptoms", "question"],
