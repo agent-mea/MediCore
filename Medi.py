@@ -7,6 +7,9 @@ from playsound import playsound
 # Initialize the OpenAI model with your API key
 llm = OpenAI(api_key='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')
 
+file_path = ''
+text_data = pd.read_csv()
+
 prompt_template = PromptTemplate(
     input_variables=["symptoms", "question"],
     template="""
@@ -31,7 +34,7 @@ symptoms = "The user is experiencing symptoms of anxiety and depression."
 # Get a question from the user (for example purposes)
 question = "What can I do to feel better?"
 
-def get_response(data_description, question):
+def get_response(symptoms, question):
     # Running the chain to get a response based on the data description and a question
     response = chain.run(symptoms=data_symptoms, question=question)
     return response
