@@ -51,7 +51,7 @@ st.markdown(
         color: white;
     }
     .stTextInput>div>div>input {
-        color: white;
+        color: black;
         padding: 10px;
         border-radius: 5px;
     }
