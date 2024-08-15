@@ -1,0 +1,36 @@
+MediCore Chatbot
+This is a Flask-based web application for a mental health chatbot named MediCore. Follow the steps below to set up and run the application.
+
+Prerequisites
+Make sure you have Python installed on your machine. You will also need to install Flask and OpenAI Python packages.
+
+Installation
+    Clone or download the project folder to your local machine.
+
+Open a terminal and navigate to the project directory.
+
+Run the following command in the terminal to install the necessary Python packages:
+    pip install flask openai
+
+
+Folder Structure
+    Ensure the folder structure looks like this:
+
+            MediCore-Chatbot/
+            │
+            ├── app.py  # Main Flask application file
+            ├── templates/
+            │   └── index.html  # HTML file for the chat interface
+            ├── static/
+            │   ├── style.css  # CSS file for styling
+            │   └── images/
+            │       └── Group Logo.jpg  # Logo image used in the chat interface
+            └── README.md  # This README file
+
+Running the Application
+  To run the Flask application:
+
+  In the terminal, navigate to the project directory if you haven't already.
+  
+  Run the following command:
+    python 'name of the python file'.py
