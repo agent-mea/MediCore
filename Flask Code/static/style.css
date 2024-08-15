@@ -334,7 +334,7 @@ button:hover {
 
 .affirmations-container {
     
-    background-color: #f9f9f9;
+    background-color: #C9E9F6;
     border-radius: 10px;
     padding: 15px;
     max-height: 200px;
@@ -358,7 +358,7 @@ button:hover {
 
 .affirmation:hover{
     
-    box-shadow: 0 2px 5px rgba(94, 164, 167, 0.724);
+    box-shadow: 0 2px 5px rgba(39, 168, 173, 0.724);
     border-radius: 10px;
     padding: 10px;
     transition-duration: 500ms;
