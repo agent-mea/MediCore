@@ -29,18 +29,26 @@ html, body {
     color: white;
     text-align: center;
     margin-bottom: 20px;
+    position: relative;
+    bottom: 70px;
 }
 
+.affirmations-title{
+    position: relative;
+    top: 10px;
+}
 .checkbox-container {
+    position: relative;
     background-color: #C9E9F6;
     padding: 15px;
     border-radius: 10px;
     width: 100%;
+    bottom: 70px;
 }
 
 .checkbox-container label {
     display: block;
-    margin-bottom: 15px; /* Increase space between radio buttons */
+    margin-bottom: 16px; /* Increase space between radio buttons */
 }
 
 .checkbox-container input[type="radio"] {
@@ -315,4 +323,45 @@ button:hover {
     background-color: #f8d7da; /* Light red background */
     color: #721c24; /* Dark red text */
     border: 1px solid #f5c6cb; /* Light red border */
+}
+
+
+.affirmations-title {
+    font-size: 24px;
+    margin-bottom: 17px;
+    color: #44B3E0; /* Match the color of your interface */
+}
+
+.affirmations-container {
+    
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    max-height: 200px;
+    width: 100%;
+    overflow-y: none;
+    
+}
+
+.affirmation {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    font-style: italic;
+     
+    
+}
+
+.affirmation:last-child {
+    margin-bottom: 0;
+}
+
+.affirmation:hover{
+    
+    box-shadow: 0 2px 5px rgba(94, 164, 167, 0.724);
+    border-radius: 10px;
+    padding: 10px;
+    transition-duration: 500ms;
+    
+    
 }
