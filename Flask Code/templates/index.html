@@ -31,7 +31,7 @@
             <h1 id="MediCore">Medi<span class="MediCore-change-color">C</span>ore</h1>
             <button id="new-chat-button" class="add-chat-button">+</button>
             <div id="chat-area" class="chat-area"></div>
-        </div>
+        </div> 
     </div>
 
     <div class="input-container">
@@ -60,57 +60,73 @@
     </footer>
 
     <script>
+        
         async function sendMessage(message) {
-            const chatArea = document.getElementById('chat-area');
-            const inputField = document.getElementById('user-message');
-            const sendButton = document.getElementById('send-message');
+    const chatArea = document.getElementById('chat-area');
+    const inputField = document.getElementById('user-message');
+    const sendButton = document.getElementById('send-message');
 
-            // Hide the welcome message
-            document.getElementById('welcome-message').style.display = 'none';
+    // Hide the welcome message
+    document.getElementById('welcome-message').style.display = 'none';
 
-            // Display the user's message on the right side
-            chatArea.innerHTML += `<div class="chat-message user-message"><strong>You:</strong> ${message}</div>`;
+    // Display the user's message on the right side
+    chatArea.innerHTML += `<div class="chat-message user-message"><strong>You:</strong> ${message}</div>`;
 
-            // Disable input field and send button
-            inputField.disabled = true;
-            sendButton.disabled = true;
+    // Disable input field and send button
+    inputField.disabled = true;
+    sendButton.disabled = true;
 
-            try {
-                // Fetch the AI response
-                const response = await fetch('/send_message', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams({ message: message })
-                });
+    try {
+        // Fetch the AI response
+        const response = await fetch('/send_message', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({ message: message })
+        });
 
-                if (!response.ok) {
-                    throw new Error('Network response was not ok.');
-                }
-
-                const result = await response.json();
-                if (result.error) {
-                    throw new Error(result.error);
-                }
-
-                const assistantMessage = result.assistant_message;
-
-                // Display the assistant's message on the left side
-                chatArea.innerHTML += `<div class="chat-message assistant-message"><strong>Medi:</strong> ${assistantMessage}</div>`;
-            } catch (error) {
-                // Display error message
-                chatArea.innerHTML += `<div class="chat-message assistant-message error-message"><strong>Medi:</strong> Sorry, there was an error: ${error.message}</div>`;
-            } finally {
-                // Scroll to the bottom of the chat messages
-                chatArea.scrollTop = chatArea.scrollHeight;
-
-                // Re-enable input field and send button
-                inputField.disabled = false;
-                sendButton.disabled = false;
-
-                // Clear the input field
-                inputField.value = '';
-            }
+        if (!response.ok) {
+            throw new Error('Network response was not ok.');
         }
+
+        const result = await response.json();
+        if (result.error) {
+            throw new Error(result.error);
+        }
+
+        let assistantMessage = result.assistant_message;
+
+        // Split the message by newlines, filter out empty lines, and apply bullet points
+        const bulletPoints = assistantMessage
+            .split('\n')               // Split by newline characters
+            .filter(line => line.trim()) // Remove empty lines or lines with only spaces
+            .map(line => `<li>${line.trim()}</li>`); // Convert each line into a list item
+
+        // Join the bullet points into a single unordered list
+        const formattedMessage = `<ul>${bulletPoints.join('')}</ul>`;
+
+        // Display the assistant's message on the left side
+        chatArea.innerHTML += `<div class="chat-message assistant-message"><strong>Medi:</strong> ${formattedMessage}</div>`;
+    } catch (error) {
+        // Display error message
+        chatArea.innerHTML += `<div class="chat-message assistant-message error-message"><strong>Medi:</strong> Sorry, there was an error: ${error.message}</div>`;
+    } finally {
+        // Scroll to the bottom of the chat messages
+        chatArea.scrollTop = chatArea.scrollHeight;
+
+        // Re-enable input field and send button
+        inputField.disabled = false;
+        sendButton.disabled = false;
+
+        // Clear the input field
+        inputField.value = '';
+    }
+}
+
+
+
+
+
+
 
         document.getElementById('send-message').addEventListener('click', function() {
             const userMessage = document.getElementById('user-message').value;
