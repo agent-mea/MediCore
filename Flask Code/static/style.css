@@ -1,29 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Angkor&display=swap');
+@font-face {
+    font-family:'RobotoSlab' ;
+    src: url(RobotoSlab-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Tagerine-Bold';
+    src: url(Tangerine-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat-VariableFont';
+    src: url(Montserrat-VariableFont_wght.ttf);
+}
+
 html, body {
     height: 100%;
     margin: 0;
-    
     background-color: #87CEEA;
     position: relative;
-
+    font-family: 'Montserrat-VariableFont';
+    
 }
-
+body{
+    overflow-y: auto;
+}
 .container {
     display: flex;
-    height: 100vh; /* Adjusted height to make room for the input field and footer */
+    height: 100vh;
 }
 
 .sidebar {
     background-color: #44B3E0;
     padding: 20px;
     width: 300px;
-    min-width: 300px; /* Ensure the sidebar width stays fixed */
+    min-width: 300px;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
 .sidebar h2 {
@@ -34,10 +51,11 @@ html, body {
     bottom: 70px;
 }
 
-.affirmations-title{
+.affirmations-title {
     position: relative;
     top: 10px;
 }
+
 .checkbox-container {
     position: relative;
     background-color: #C9E9F6;
@@ -49,12 +67,12 @@ html, body {
 
 .checkbox-container label {
     display: block;
-    margin-bottom: 16px; /* Increase space between radio buttons */
+    margin-bottom: 16px;
 }
 
 .checkbox-container input[type="radio"] {
-    transform: scale(1.5); /* Increase the size of the radio buttons */
-    margin-right: 10px; /* Add space between radio buttons and labels */
+    transform: scale(1.5);
+    margin-right: 10px;
 }
 
 .chat-history-title {
@@ -70,7 +88,7 @@ html, body {
 .add-chat-button {
     position: absolute;
     top: 20px;
-    left: 380px; /* Start after the sidebar */
+    left: 380px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -89,18 +107,17 @@ html, body {
     flex-grow: 1;
     padding: 20px;
     background-color: #87CEEA;
-    margin-left: 100px; /* Make sure the main content stays beside the sidebar */
+    margin-left: 100px;
 }
 
 .main-content h1 {
     text-align: right;
-    font-family: 'Angkor';
+    font-family: 'Tagerine-Bold';
     position: absolute;
     left: 87%;
-    top: 4px;
-    font-weight: 20;
-    
-    
+    top: 2px;
+    font-weight: 170;
+    font-size: 50px;
 }
 
 .chat-history {
@@ -111,7 +128,7 @@ html, body {
 }
 
 textarea {
-    width: 100%;
+    width: 100%; 
     height: 100px;
     margin-top: 10px;
 }
@@ -130,14 +147,14 @@ button:hover {
     background-color: #2E94B8;
 }
 
-/* Style for the input field container */
 .input-container {
     display: flex;
     justify-content: center;
     position: fixed;
-    bottom: 40px; /* Positioned just above the footer */
-    left: 320px; /* Same start point as the footer */
-    right: 20px; /* Same end point as the footer */
+    bottom: 60px;
+    left: 320px;
+    right: 20px;
+    padding-top: 80px;
 }
 
 .input-container input {
@@ -149,23 +166,39 @@ button:hover {
     font-size: 16px;
 }
 
+.send-button {
+    border-radius: 50%;
+    padding: 10px 20px;
+    background-color: #44B3E0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.send-button:hover {
+    background-color: #2E94B8;
+}
+
 .footer {
     text-align: center;
     color: grey;
     padding: 10px;
     position: fixed;
     bottom: 0;
-    left: 320px; /* Start after the sidebar */
-    right: 20px; /* Adjust as needed for perfect centering */
+    left: 320px;
+    right: 20px;
 }
 
 .welcome-message {
     position: absolute;
     top: 30%;
     left: 50%;
-    transform: translateX(calc(50% - 550px)); /* Centering between sidebar and screen edge */
+    transform: translateX(calc(50% - 550px));
     text-align: center;
     z-index: 1;
+    display: block;
 }
 
 .welcome-content {
@@ -191,13 +224,12 @@ button:hover {
 .welcome-message p {
     color: #666;
     font-size: 16px;
-   
 }
 
 .quick-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Space between buttons */
+    gap: 10px;
     justify-content: center;
 }
 
@@ -209,15 +241,14 @@ button:hover {
     padding: 10px 20px;
     cursor: pointer;
     font-size: 14px;
-    flex: 1 1 calc(25% - 20px); /* Adjust button size and spacing */
-    max-width: 200px; /* Ensure buttons are not too wide */
+    flex: 1 1 calc(25% - 20px);
+    max-width: 200px;
 }
 
 .quick-action:hover {
     background-color: #2E94B8;
 }
 
-/* Style for the notification */
 .notification {
     position: fixed;
     top: 35px;
@@ -230,30 +261,27 @@ button:hover {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease, visibility 0.5s ease;
-    z-index: 1000; /* Ensure it's on top of other content */
+    z-index: 1000;
     font-style: italic;
     font-size: 18px;
 }
+
 .notification.show {
     opacity: 1;
     visibility: visible;
 }
-.MediCore-change-color{
+
+.MediCore-change-color {
     color: #2999c6;
-    
-}
-.notification p{
-    font-size: 400px;
 }
 
-/* Style adjustments */
 .chat-area {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: calc(100vh - 160px); 
-    margin-left: 100px; /* Ensure space for the sidebar */
-    overflow-y: auto;
+     
+    margin-left: 50px;
+    margin-right: 100;
     padding: 10px;
     box-sizing: border-box;
     background-color: transparent;
@@ -263,106 +291,74 @@ button:hover {
     margin: 5px 0;
     padding: 10px;
     border-radius: 10px;
-    max-width: 60%; /* Limit width to avoid overflow */
+    max-width: 60%;
+    text-align: justify; /* Fully justifies the text */
+    
 }
 
 .user-message {
-    align-self: flex-end; /* Align user messages to the right */
-    background-color: #d1e7dd; /* You can keep the background color or remove it if you want transparency */
+    align-self: flex-end;
+    background-color: #d1e7dd;
+    margin-right: 20px; /* Added margin to ensure spacing from the right side */
+    
+
 }
 
 .assistant-message {
-    align-self: flex-start; /* Align assistant messages to the left */
-    background-color: #e2e3e5; /* Same here, keep or remove */
+    align-self: flex-start;
+    background-color: #e2e3e5;
 }
 
-/* Ensure input container and button adjustments */
-.input-container {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    bottom: 60px; /* Adjusted from the footer */
-    left: 320px; /* Start after the sidebar */
-    right: 20px; /* End before the edge of the screen */
+/* Bullet point styling */
+.chat-message.assistant-message ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    text-align: justify; /* Fully justifies the bullet points */
 }
 
-.input-container input {
-    width: 70%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    background-color: white;
+.chat-message.assistant-message li {
+    margin-bottom: 15px;
+    list-style-type: disc; /* Use bullet points instead of dashes */
     font-size: 16px;
 }
-
-.send-button {
-    border-radius: 50%;
-    padding: 10px 20px;
-    background-color: #44B3E0;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    margin-left: 10px; /* Space between input field and button */
-}
-
-.send-button:hover {
-    background-color: #2E94B8;
-}
-
-.welcome-message {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translateX(calc(50% - 550px)); /* Centering between sidebar and screen edge */
-    text-align: center;
-    z-index: 1;
-    display: block; /* Ensure it's visible initially */
-}
-
-.error-message {
-    background-color: #f8d7da; /* Light red background */
-    color: #721c24; /* Dark red text */
-    border: 1px solid #f5c6cb; /* Light red border */
-}
-
 
 .affirmations-title {
     font-size: 24px;
     margin-bottom: 17px;
-    color: #44B3E0; /* Match the color of your interface */
+    color: #44B3E0;
 }
 
 .affirmations-container {
-    
     background-color: #C9E9F6;
     border-radius: 10px;
     padding: 15px;
     max-height: 200px;
     width: 100%;
     overflow-y: none;
-    
+    text-align: center;
 }
 
 .affirmation {
-    font-size: 18px;
+    font-size: 16px;
     color: #333;
     margin-bottom: 10px;
     font-style: italic;
-     
-    
 }
 
 .affirmation:last-child {
     margin-bottom: 0;
 }
 
-.affirmation:hover{
-    
+.affirmation:hover {
     box-shadow: 0 2px 5px rgba(39, 168, 173, 0.724);
     border-radius: 10px;
     padding: 10px;
     transition-duration: 500ms;
-    
-    
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
 }
